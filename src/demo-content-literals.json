@@ -1,0 +1,106 @@
+[
+  {
+    "name": "sample-chart-static-plan-data",
+    "file": "tasks-4aa0b66fb4ee.js",
+    "from": "Ts=[{online:184,retail:96,corporate:42},{online:196,retail:102,corporate:38},{online:231,retail:110,corporate:47},{online:218,retail:121,corporate:44},{online:256,retail:134,corporate:53},{online:247,retail:146,corporate:57},{online:279,retail:162,corporate:49},{online:305,retail:179,corporate:66},{online:402,retail:265,corporate:81},{online:386,retail:281,corporate:76},{online:574,retail:398,corporate:109},{online:641,retail:432,corporate:126}]",
+    "to": "Ts=(()=>{const lines=\"version,label,direction,target_s,opening_s,story_s,ending_s,aspect_ratio,channel,audience,status,owner,filename,checklist\\nM01,剧情竖版,剧情钩子,30,5,19,6,9:16,信息流,偏好强冲突与反转的剧情用户,精修已交付,剪辑岗 A,S01_plot_9x16_30s_v03.mp4,首屏问题清楚；因果完整；不揭终局\\nM02,剧情横版,剧情钩子,45,5,32,8,16:9,站内推荐,想快速了解故事矛盾的新观众,粗剪已交付,剪辑岗 B,S01_plot_16x9_45s_v01.mp4,补足事件起因；保留原声；结尾留钩子\\nM03,人物竖版,人物高光,30,4,20,6,9:16,信息流,关注演员表现与角色成长的用户,精修已交付,剪辑岗 A,S01_character_9x16_30s_v02.mp4,演员与角色一致；动作有兑现；字卡不遮脸\\nM04,人物横版,人物高光,45,5,32,8,16:9,站内推荐,关注人物处境与选择的新观众,脚本已交付,策划岗 A,S01_character_16x9_45s_v01.mp4,处境到选择再到结果；生命阶段一致\\nM05,关系竖版,关系张力,30,5,19,6,9:16,社交分发,偏好情感对峙与关系变化的用户,粗剪已交付,剪辑岗 B,S01_relation_9x16_30s_v01.mp4,对话指向清楚；反应镜头匹配；跨场景不改语义\\nM06,关系横版,关系张力,45,5,32,8,16:9,剧集预约页,希望理解人物关系与情绪走向的用户,简报已确认,策划岗 B,S01_relation_16x9_45s_v01.mp4,交代关系前提；情绪递进；保留关系转折\\n\".trim().split(/\\r?\\n/),headers=lines.shift().split(\",\");return lines.map(line=>{const fields=line.split(\",\"),row=Object.fromEntries(headers.map((key,index)=>[key,fields[index]]));return{...row,online:Number(row.opening_s),retail:Number(row.story_s),corporate:Number(row.ending_s)}})})()",
+    "expectedCount": 1,
+    "kind": "built-in CSV data parsing only; original chart model and execution controllers retained"
+  },
+  {
+    "name": "sample-chart-version-labels",
+    "file": "tasks-4aa0b66fb4ee.js",
+    "from": "Ts.map((t,n)=>{let r=new Date(Date.UTC(2026,n,1));return{...t,month:e.formatDate(r,{month:`short`,timeZone:`UTC`}),monthLong:e.formatDate(r,{month:`long`,timeZone:`UTC`}),total:t.online+t.retail+t.corporate}})",
+    "to": "Ts.map(t=>({...t,month:t.version,monthLong:t.version+\" \"+t.label,total:t.online+t.retail+t.corporate}))",
+    "expectedCount": 1,
+    "kind": "static content/data presentation only; no handler changes"
+  },
+  {
+    "name": "sample-chart-png-axis-domain",
+    "file": "tasks-4aa0b66fb4ee.js",
+    "from": "v=[0,1200]",
+    "to": "v=[0,60]",
+    "expectedCount": 1,
+    "kind": "static content/data presentation only; no handler changes"
+  },
+  {
+    "name": "sample-chart-png-ticks",
+    "file": "tasks-4aa0b66fb4ee.js",
+    "from": "Ps=[0,300,600,900,1200]",
+    "to": "Ps=[0,15,30,45,60]",
+    "expectedCount": 1,
+    "kind": "static content/data presentation only; no handler changes"
+  },
+  {
+    "name": "sample-chart-png-value-format",
+    "file": "tasks-4aa0b66fb4ee.js",
+    "from": "value:t.formatNumber(e/1e3,{maximumFractionDigits:1})",
+    "to": "value:t.formatNumber(e,{maximumFractionDigits:1})",
+    "expectedCount": 1,
+    "kind": "static content/data presentation only; no handler changes"
+  },
+  {
+    "name": "sample-chart-html-axis",
+    "file": "tasks-4aa0b66fb4ee.js",
+    "from": "Us=1300,Ws=[1200,900,600,300,0]",
+    "to": "Us=52,Ws=[45,30,15,0]",
+    "expectedCount": 1,
+    "kind": "static content/data presentation only; no handler changes"
+  },
+  {
+    "name": "starter-card-radius",
+    "file": "onboarding-starter-tasks-e4ec246ae130.js",
+    "from": "radius: 16,",
+    "to": "radius: 9,",
+    "expectedCount": 2,
+    "kind": "box styling only"
+  },
+  {
+    "name": "starter-card-selected-fill",
+    "file": "onboarding-starter-tasks-e4ec246ae130.js",
+    "from": "color-mix(in oklab, var(--color-blue) 10%, transparent)",
+    "to": "color-mix(in srgb, light-dark(#0052d9, #4582e6) 10%, transparent)",
+    "expectedCount": 1,
+    "kind": "color styling only"
+  },
+  {
+    "name": "starter-card-selected-check",
+    "file": "onboarding-starter-tasks-e4ec246ae130.js",
+    "from": "__dil.jsx(Check, { color: \"var(--color-blue)\" })",
+    "to": "__dil.jsx(Check, { color: \"light-dark(#0052d9, #4582e6)\" })",
+    "expectedCount": 1,
+    "kind": "color styling only"
+  },
+  {
+    "name": "sample-csv-task-html-output-format",
+    "file": "tasks-4aa0b66fb4ee.js",
+    "from": "kc=lc(`png`),Ac=lc(`html`)",
+    "to": "kc=lc(`html`),Ac=lc(`html`)",
+    "expectedCount": 1,
+    "kind": "output format configuration only; reuse original HTML creation and preview controllers"
+  },
+  {
+    "name": "sample-chart-html-complete-artifact-content",
+    "file": "tasks-4aa0b66fb4ee.js",
+    "from": "  <div class=\"axis-caption\">${Hs(t.ordersLabel)}</div>\n</section>",
+    "to": "  <div class=\"axis-caption\">${Hs(t.ordersLabel)}</div>\n<section class=\"promo-overview\"><p class=\"promo-kicker\">腾讯视频素材工作台</p><p><strong>物料交付表已整理好。</strong>共 6 项物料，已算好开场、推进和收尾时长。悬停柱形或按 Tab，可以查看各段数据。</p><p class=\"demo-note\">内置示例。表内岗位、状态和视频文件名为示例。本次生成交付文档，可下载 CSV。</p></section><section class=\"promo-plans\"><h3>三种素材方向</h3><div class=\"plan-grid\"><article><span class=\"direction-tag\">剧情钩子</span><h4>开场给一个问题</h4><p>先给矛盾，再补足起因。信息一点点给，结尾留住悬念。</p><p><strong>M01 竖版，30 秒，9:16</strong><br>5 秒开场 → 19 秒推进 → 6 秒收尾</p></article><article><span class=\"direction-tag\">人物高光</span><h4>用行动表现人物</h4><p>先交代处境，再给人物的选择。保留行动和完整台词，人物阶段要对得上。</p><p><strong>M03 竖版，30 秒，9:16</strong><br>4 秒开场 → 20 秒推进 → 6 秒收尾</p></article><article><span class=\"direction-tag\">关系张力</span><h4>让对话有来有回</h4><p>交代两人的关系，接好对话和反应镜头。换场景也要保留对白原意。</p><p><strong>M05 竖版，30 秒，9:16</strong><br>5 秒开场 → 19 秒推进 → 6 秒收尾</p></article></div></section><section class=\"promo-table-section\"><h3>物料交付信息</h3><p class=\"data-summary\">共 ${t.data.length} 项物料，合计 ${t.data.reduce((sum,row)=>sum+row.total,0)} 秒。总时长为开场、推进与收尾之和。</p><div class=\"data-downloads\"><a download=\"视频素材_物料清单_示例.csv\" href=\"${Hs(\"data:text/csv;charset=utf-8,%EF%BB%BF\"+encodeURIComponent(\"version,label,direction,target_s,opening_s,story_s,ending_s,aspect_ratio,channel,audience,status,owner,filename,checklist\\n\"+t.data.map(row=>[\"version\", \"label\", \"direction\", \"target_s\", \"opening_s\", \"story_s\", \"ending_s\", \"aspect_ratio\", \"channel\", \"audience\", \"status\", \"owner\", \"filename\", \"checklist\"].map(key=>row[key]).join(\",\")).join(\"\\n\")+\"\\n\"))}\">下载物料 CSV</a><a download=\"视频素材_检查清单_示例.csv\" href=\"data:text/csv;charset=utf-8,%EF%BB%BFcheck_id%2Cscope%2Crequirement%2Cacceptance%0AC01%2C%E4%BA%BA%E7%89%A9%2C%E6%BC%94%E5%91%98%EF%BC%8F%E8%A7%92%E8%89%B2%EF%BC%8F%E7%94%9F%E5%91%BD%E9%98%B6%E6%AE%B5%E4%B8%80%E8%87%B4%2C%E6%AF%8F%E4%B8%AA%E6%A0%B8%E5%BF%83%E9%95%9C%E5%A4%B4%E8%83%BD%E5%AF%B9%E5%BA%94%E4%BA%BA%E7%89%A9%E8%A1%A8%0AC02%2C%E5%89%A7%E6%83%85%2C%E4%BF%9D%E7%95%99%E4%BA%8B%E4%BB%B6%E8%B5%B7%E5%9B%A0%E4%B8%8E%E7%BB%93%E6%9E%9C%E7%9A%84%E5%9B%A0%E6%9E%9C%E5%85%B3%E7%B3%BB%2C%E9%95%9C%E5%A4%B4%E9%87%8D%E6%8E%92%E4%B8%8D%E6%94%B9%E5%AF%B9%E7%99%BD%E6%8C%87%E5%90%91%E5%92%8C%E4%BA%BA%E7%89%A9%E5%8A%A8%E6%9C%BA%0AC03%2C%E8%8A%82%E5%A5%8F%2C%E5%BC%80%E5%9C%BA%E6%8F%90%E5%87%BA%E5%85%B7%E4%BD%93%E9%97%AE%E9%A2%98%EF%BC%9B%E4%B8%AD%E6%AE%B5%E9%80%92%E8%BF%9B%EF%BC%9B%E7%BB%93%E5%B0%BE%E6%9C%89%E8%AE%B0%E5%BF%86%E7%82%B9%2C%E9%A6%96%E7%9C%8B%E8%83%BD%E7%90%86%E8%A7%A3%E7%9C%8B%E7%82%B9%E4%B8%94%E6%84%BF%E6%84%8F%E7%BB%A7%E7%BB%AD%E8%A7%82%E7%9C%8B%0AC04%2C%E5%A3%B0%E9%9F%B3%2C%E5%8E%9F%E5%A3%B0%E5%AF%B9%E7%99%BD%E4%BC%98%E5%85%88%EF%BC%9B%E9%9F%B3%E4%B9%90%E6%9C%8D%E5%8A%A1%E6%83%85%E7%BB%AA%EF%BC%9B%E5%93%8D%E5%BA%A6%E5%B9%B3%E7%A8%B3%2C%E5%AF%B9%E7%99%BD%E6%B8%85%E6%A5%9A%EF%BC%9B%E5%88%87%E7%82%B9%E6%97%A0%E7%88%86%E9%9F%B3%EF%BC%9B%E9%9F%B3%E4%B9%90%E4%B8%8D%E5%8E%8B%E5%8F%B0%E8%AF%8D%0AC05%2C%E5%AD%97%E5%8D%A1%2C%E4%B8%80%E5%B1%8F%E4%B8%80%E4%B8%AA%E4%BF%A1%E6%81%AF%E7%82%B9%EF%BC%9B%E9%80%82%E9%85%8D%E5%AD%97%E5%B9%95%E4%B8%8E%E5%AE%89%E5%85%A8%E5%8C%BA%2C%E6%89%8B%E6%9C%BA%E5%8F%AF%E8%AF%BB%EF%BC%9B%E4%B8%8D%E9%81%AE%E4%BA%BA%E8%84%B8%EF%BC%9B%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%A4%A7%E6%AE%B5%E5%8F%B0%E8%AF%8D%0AC06%2C%E7%94%BB%E5%B9%85%2C%E6%A8%AA%E7%AB%96%E7%89%88%E5%88%86%E5%88%AB%E6%9E%84%E5%9B%BE%E5%B9%B6%E6%A3%80%E6%9F%A5%E5%AD%97%E5%B9%95%E5%AE%89%E5%85%A8%E5%8C%BA%2C%E4%B8%BB%E4%BD%93%E4%B8%8E%E5%AF%B9%E8%A7%86%E5%AF%B9%E8%B1%A1%E5%9D%87%E6%9C%89%E6%84%8F%E4%B9%89%EF%BC%9B%E6%B2%A1%E6%9C%89%E7%9B%B2%E7%9B%AE%E4%B8%AD%E5%BF%83%E8%A3%81%E5%88%87%0AC07%2C%E7%89%88%E6%9C%AC%2C%E6%88%90%E7%89%87%EF%BC%8F%E5%AD%97%E5%B9%95%EF%BC%8F%E5%B0%81%E9%9D%A2%EF%BC%8F%E7%89%88%E6%9C%AC%E8%AE%B0%E5%BD%95%E9%85%8D%E5%A5%97%2C%E5%91%BD%E5%90%8D%E4%B8%8E%E7%89%A9%E6%96%99%E8%A1%A8%E4%B8%80%E8%87%B4%EF%BC%9B%E4%BF%AE%E6%94%B9%E8%8C%83%E5%9B%B4%E5%8F%AF%E8%BF%BD%E6%BA%AF%0A\">下载检查 CSV</a></div><div class=\"promo-table-scroll\"><table class=\"promo-table\"><thead><tr><th>物料</th><th>渠道 / 画幅</th><th>时长分配</th><th>交付状态</th><th>责任岗位</th><th>文件命名示例</th><th>检查要点</th></tr></thead><tbody>${t.data.map(row=>`<tr><td><strong>${Hs(row.version)}</strong><br>${Hs(row.direction)}</td><td>${Hs(row.channel)}<br>${Hs(row.aspect_ratio)}</td><td>${row.online} + ${row.retail} + ${row.corporate}<br><strong>${row.total} 秒</strong></td><td><span class=\"status-tag\">${Hs(row.status)}</span></td><td>${Hs(row.owner)}</td><td class=\"file-example\">${Hs(row.filename)}</td><td>${Hs(row.checklist)}</td></tr>`).join(\"\")}</tbody></table></div></section><section class=\"promo-table-section\"><h3>交付检查清单</h3><div class=\"promo-table-scroll\"><table class=\"promo-table\"><thead><tr><th>编号</th><th>检查范围</th><th>要求</th><th>通过标准</th></tr></thead><tbody><tr><td>C01</td><td>人物</td><td>演员／角色／生命阶段一致</td><td>每个核心镜头能对应人物表</td></tr><tr><td>C02</td><td>剧情</td><td>保留事件起因与结果的因果关系</td><td>镜头重排不改对白指向和人物动机</td></tr><tr><td>C03</td><td>节奏</td><td>开场提出具体问题；中段递进；结尾有记忆点</td><td>首看能理解看点且愿意继续观看</td></tr><tr><td>C04</td><td>声音</td><td>原声对白优先；音乐服务情绪；响度平稳</td><td>对白清楚；切点无爆音；音乐不压台词</td></tr><tr><td>C05</td><td>字卡</td><td>一屏一个信息点；适配字幕与安全区</td><td>手机可读；不遮人脸；不重复大段台词</td></tr><tr><td>C06</td><td>画幅</td><td>横竖版分别构图并检查字幕安全区</td><td>主体与对视对象均有意义；没有盲目中心裁切</td></tr><tr><td>C07</td><td>版本</td><td>成片／字幕／封面／版本记录配套</td><td>命名与物料表一致；修改范围可追溯</td></tr></tbody></table></div><p class=\"qa-callout\"><strong>修改记录：</strong>写清物料 ID、问题位置和修改范围。视频、字幕、封面一起更新，交付前再对一遍版本。</p></section>\n</section>",
+    "expectedCount": 1,
+    "kind": "static content, data table and CSV download anchors only; original chart/tooltip callbacks retained"
+  },
+  {
+    "name": "sample-chart-html-artifact-content-style",
+    "file": "tasks-4aa0b66fb4ee.js",
+    "from": "@media(max-width:560px){.sample-sales-chart{padding-inline:8px}.chart-title{font-size:20px}}\n</style>",
+    "to": "@media(max-width:560px){.sample-sales-chart{padding-inline:8px}.chart-title{font-size:20px}}\n\n.promo-overview,.promo-plans,.promo-table-section{margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;line-height:1.65}.promo-kicker{margin:0 0 8px;color:#0052d9;font-size:12px;font-weight:600;letter-spacing:.03em}.promo-overview p{margin:8px 0}.demo-note{color:var(--muted-foreground);font-size:12px}.promo-plans h3,.promo-table-section h3{margin:0 0 12px;font-size:18px;line-height:1.5}.plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.plan-grid article{padding:16px;border:1px solid var(--border);border-radius:9px;background:var(--background)}.plan-grid h4{margin:7px 0 10px;font-size:16px;line-height:1.5}.plan-grid p{margin:10px 0}.direction-tag{color:#0052d9;font-size:12px;font-weight:600}.data-downloads{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}.data-downloads a{display:inline-block;padding:8px 12px;border:1px solid var(--border);border-radius:6px;color:#0052d9;font-size:13px;font-weight:600;text-decoration:none}.data-downloads a:hover,.data-downloads a:focus-visible{background:#f2f3ff;outline:2px solid #d9e1ff;outline-offset:2px}.promo-table-scroll{overflow:auto}.promo-table{width:100%;border-collapse:collapse;min-width:820px;text-align:left;font-size:12px;line-height:1.6}.promo-table th,.promo-table td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}.promo-table th{color:var(--muted-foreground);font-weight:600;white-space:nowrap}.promo-table tbody tr:hover{background:color-mix(in srgb,#0052d9 5%,var(--background))}.status-tag{display:inline-block;white-space:nowrap;padding:2px 6px;border:1px solid var(--border);border-radius:3px;color:#0052d9;background:color-mix(in srgb,#0052d9 5%,var(--background))}.file-example{font-family:ui-monospace,monospace;font-size:11px;overflow-wrap:anywhere}.data-summary{color:var(--muted-foreground);font-size:12px}.qa-callout{padding:12px 14px;border-left:3px solid #0052d9;border-radius:3px;background:color-mix(in srgb,#0052d9 5%,var(--background));font-size:12px;line-height:1.65}@media(max-width:760px){.plan-grid{grid-template-columns:1fr}.promo-overview,.promo-plans,.promo-table-section{font-size:13px}}\n</style>",
+    "expectedCount": 1,
+    "kind": "scoped generated HTML content styling; original app layout untouched"
+  },
+  {
+    "name": "sample-chart-html-data-column-count",
+    "file": "tasks-4aa0b66fb4ee.js",
+    "from": "grid-template-columns:repeat(12,minmax(0,1fr))",
+    "to": "grid-template-columns:repeat(${t.data.length},minmax(0,1fr))",
+    "expectedCount": 1,
+    "kind": "data-dependent chart column presentation only; original event handlers retained"
+  }
+]

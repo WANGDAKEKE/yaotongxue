@@ -1,0 +1,54 @@
+/* Only the newly requested navigation controls use these layout rules. */
+.yao-onboarding-navigation {
+  position: absolute;
+  top: 56px;
+  left: 24px;
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+}
+.yao-onboarding-steps {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 16px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 80px;
+  height: 3px;
+}
+.yao-onboarding-step {
+  position: relative;
+  flex: 1;
+  height: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+.yao-onboarding-step::before {
+  content: "";
+  position: absolute;
+  inset: -11px 0;
+}
+.yao-onboarding-step-bar {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--yao-text) 10%, transparent);
+}
+.yao-onboarding-step[aria-current="step"] .yao-onboarding-step-bar {
+  background: var(--yao-brand-color);
+}
+.yao-onboarding-step:hover:not(:disabled) .yao-onboarding-step-bar {
+  background: var(--yao-brand-hover);
+}
+.yao-onboarding-step:focus-visible { outline: 2px solid var(--yao-brand-color); outline-offset: 3px; }
+.yao-onboarding-step:disabled { cursor: default; }
+@media (max-width: 420px) {
+  .yao-onboarding-navigation { left: 16px; }
+}

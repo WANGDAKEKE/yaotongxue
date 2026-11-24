@@ -1,0 +1,35 @@
+{
+  "scope": "Concepts for macOS launch icon only; installed artwork unchanged",
+  "options": [
+    {
+      "id": "A",
+      "name": "墨白",
+      "caption": "深色底，清楚利落"
+    },
+    {
+      "id": "B",
+      "name": "线构",
+      "caption": "细线轮廓，更轻更克制"
+    },
+    {
+      "id": "C",
+      "name": "叠帧",
+      "caption": "两层画面，突出素材生产"
+    },
+    {
+      "id": "D",
+      "name": "取景",
+      "caption": "取景框，强调视频理解"
+    },
+    {
+      "id": "E",
+      "name": "切片",
+      "caption": "沿标志切分，带一点剪辑感"
+    },
+    {
+      "id": "F",
+      "name": "纯标",
+      "caption": "去掉底板，保留品牌轮廓"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+/* TDesign visual tokens. Official geometry, layout, motion and event handlers stay intact.
+   Sources: Tencent/tdesign-common style/web/theme/{_font,_radius,_light,_dark}.less */
+:root {
+  --font-sans: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  --default-font-family: var(--font-sans);
+  --codex-content-font-family: var(--font-sans);
+  --yao-brand-color: #0052d9;
+  --yao-brand-hover: #366ef4;
+  --yao-brand-active: #003cab;
+  --yao-selected-color: #f2f3ff;
+  --yao-selected-border-color: #0052d9;
+  --yao-container: #fff;
+  --yao-container-hover: #f3f3f3;
+  --yao-border: #ddd;
+  --yao-text: rgba(0, 0, 0, .9);
+  --yao-description: rgba(0, 0, 0, .6);
+  --yao-disabled-fill: #eee;
+  --yao-disabled-text: rgba(0, 0, 0, .26);
+  --yao-box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+  --codex-base-accent: var(--yao-brand-color);
+  --app-color-accent-blue: var(--yao-brand-color);
+  --app-color-background-accent: var(--yao-brand-color);
+  --app-color-background-accent-hover: var(--yao-brand-hover);
+  --app-color-background-accent-active: var(--yao-brand-active);
+  --app-color-text-on-accent: #fff;
+  --app-color-text-accent: var(--yao-brand-color);
+  --app-color-icon-accent: var(--yao-brand-color);
+  --app-color-text-foreground: var(--yao-text);
+  --app-color-text-foreground-secondary: var(--yao-description);
+  --app-color-text-foreground-tertiary: rgba(0, 0, 0, .4);
+  --app-color-border: var(--yao-border);
+  --color-text-accent-action: var(--yao-brand-color);
+  --color-background-accent-action: var(--yao-brand-color);
+}
+:root[data-theme="dark"] {
+  --yao-brand-color: #4582e6;
+  --yao-brand-hover: #2667d4;
+  --yao-brand-active: #699ef5;
+  --yao-selected-color: #1b2f51;
+  --yao-selected-border-color: #4582e6;
+  --yao-container: #242424;
+  --yao-container-hover: #2c2c2c;
+  --yao-border: #4b4b4b;
+  --yao-text: rgba(255, 255, 255, .9);
+  --yao-description: rgba(255, 255, 255, .55);
+  --yao-disabled-fill: #2c2c2c;
+  --yao-disabled-text: rgba(255, 255, 255, .22);
+  --yao-box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+  --app-color-text-foreground-tertiary: rgba(255, 255, 255, .35);
+}
+body { font-family: var(--font-sans); }
+
+/* Original role choices and original native example cards; no added elements. */
+:is(button[aria-pressed].h-10.min-w-0, button[class~="h-[120px]"].min-w-0.rounded-2xl) {
+  color: var(--yao-text);
+  background-color: var(--yao-container);
+  border-color: var(--yao-border);
+  border-radius: 9px;
+  box-shadow: var(--yao-box-shadow);
+  font-weight: 500;
+}
+:is(button[aria-pressed].h-10.min-w-0, button[class~="h-[120px]"].min-w-0.rounded-2xl):hover:not(:disabled) {
+  background-color: var(--yao-container-hover);
+  border-color: var(--yao-brand-hover);
+}
+:is(button[aria-pressed="true"].h-10.min-w-0, button[class~="h-[120px]"].min-w-0.rounded-2xl[class~="bg-chart-blue/10"]) {
+  color: var(--yao-brand-color);
+  background-color: var(--yao-selected-color);
+  border-color: var(--yao-selected-border-color);
+  box-shadow: inset 0 0 0 1px var(--yao-selected-border-color);
+}
+:is(button[aria-pressed="true"].h-10.min-w-0, button[class~="h-[120px]"].min-w-0.rounded-2xl[class~="bg-chart-blue/10"]):hover:not(:disabled) {
+  background-color: var(--yao-selected-color);
+  border-color: var(--yao-selected-border-color);
+}
+button[aria-pressed="true"].h-10.min-w-0 svg { color: var(--yao-brand-color); }
+
+/* Original onboarding primary controls keep their width, height and callbacks. */
+:is([class~="max-w-[560px]"] button.w-full.rounded-full.text-primary-solid, button[class~="h-11.5"].w-80.text-primary-solid, button[class~="h-[46px]"][class~="w-[320px]"].text-primary-solid) {
+  border-radius: 6px;
+  font-weight: 500;
+}
+:is([class~="max-w-[560px]"] button.w-full.rounded-full.text-primary-solid, button[class~="h-11.5"].w-80.text-primary-solid, button[class~="h-[46px]"][class~="w-[320px]"].text-primary-solid):not(:disabled) {
+  color: #fff;
+  background-color: var(--yao-brand-color);
+  border-color: var(--yao-brand-color);
+}
+:is([class~="max-w-[560px]"] button.w-full.rounded-full.text-primary-solid, button[class~="h-11.5"].w-80.text-primary-solid, button[class~="h-[46px]"][class~="w-[320px]"].text-primary-solid):hover:not(:disabled) {
+  background-color: var(--yao-brand-hover);
+  border-color: var(--yao-brand-hover);
+}
+:is([class~="max-w-[560px]"] button.w-full.rounded-full.text-primary-solid, button[class~="h-11.5"].w-80.text-primary-solid, button[class~="h-[46px]"][class~="w-[320px]"].text-primary-solid):active:not(:disabled) {
+  background-color: var(--yao-brand-active);
+  border-color: var(--yao-brand-active);
+}
+:is([class~="max-w-[560px]"] button.w-full.rounded-full.text-primary-solid, button[class~="h-11.5"].w-80.text-primary-solid, button[class~="h-[46px]"][class~="w-[320px]"].text-primary-solid):disabled {
+  color: var(--yao-disabled-text);
+  background-color: var(--yao-disabled-fill);
+  border-color: transparent;
+}
+:is(button[aria-pressed].h-10.min-w-0, button[class~="h-[120px]"].min-w-0.rounded-2xl, [class~="max-w-[560px]"] button.w-full.text-primary-solid):focus-visible {
+  outline-color: var(--yao-brand-color);
+  outline-style: solid;
+  outline-width: 2px;
+}
+[class~="max-w-[560px]"] [class~="text-[28px]"] {
+  color: var(--yao-text);
+  font-weight: 600;
+}
+[class~="max-w-[560px]"] .text-codex-description { color: var(--yao-description); }
+.yao-role-task-demo { border-radius: 9px; border-color: var(--yao-border); background-color: var(--yao-container); }

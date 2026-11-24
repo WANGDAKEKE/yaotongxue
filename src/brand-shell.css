@@ -1,0 +1,106 @@
+/* TDesign semantic colors and control finishes for the existing client shell.
+   No routes, hit areas, control order or panel geometry are changed here. */
+:root {
+  --yao-shell-page: #f3f3f3;
+  --yao-shell-line: #e8e8e8;
+  --yao-shell-focus: #d9e1ff;
+  --font-ui-family: var(--font-sans);
+  --color-text: var(--yao-text);
+  --color-text-secondary: var(--yao-description);
+  --color-text-tertiary: rgba(0, 0, 0, .4);
+  --color-text-disabled: var(--yao-disabled-text);
+  --color-text-accent: var(--yao-brand-color);
+  --color-text-accent-action: var(--yao-brand-color);
+  --color-surface: var(--yao-container);
+  --color-surface-elevated: var(--yao-container);
+  --color-surface-secondary: var(--yao-shell-page);
+  --color-surface-elevated-secondary: var(--yao-container);
+  --color-border: var(--yao-border);
+  --color-border-subtle: var(--yao-shell-line);
+  --color-background-primary-solid: var(--yao-brand-color);
+  --color-background-primary-solid-hover: var(--yao-brand-hover);
+  --color-background-primary-solid-active: var(--yao-brand-active);
+  --color-text-primary-solid: #fff;
+  --color-text-primary-ghost: var(--yao-text);
+  --color-text-primary-ghost-hover: var(--yao-brand-color);
+  --color-background-primary-ghost-hover: var(--yao-selected-color);
+  --color-background-primary-ghost-active: var(--yao-selected-color);
+  --color-background-secondary-ghost-hover: var(--yao-container-hover);
+  --color-background-secondary-ghost-active: var(--yao-container-hover);
+  --color-border-primary-outline: var(--yao-brand-color);
+  --color-ring-primary-solid: var(--yao-shell-focus);
+  --color-ring-primary-ghost: var(--yao-shell-focus);
+}
+
+:root:is([data-theme="dark"], [theme-mode="dark"], .dark) {
+  --yao-shell-page: #181818;
+  --yao-shell-line: #393939;
+  --yao-shell-focus: #173463;
+  --color-text-tertiary: rgba(255, 255, 255, .35);
+}
+
+body, .font-openai-sans, button, input, textarea, select {
+  font-family: var(--font-sans);
+}
+
+:is([data-app-shell-frame], [data-app-shell-main-surface], [data-app-shell-page-surface], [data-app-shell-page-header], [data-app-shell-titlebar], [data-app-shell-header-toolbar]) {
+  font-family: var(--font-sans);
+  color: var(--yao-text);
+  border-color: var(--yao-shell-line);
+}
+
+[data-slate-sidebar-content] {
+  font-family: var(--font-sans);
+  background-color: var(--yao-shell-page);
+  border-color: var(--yao-shell-line);
+}
+
+[data-sidebar-navigation-root] :is([aria-current="page"], [aria-selected="true"]) {
+  color: var(--yao-brand-color);
+  background-color: var(--yao-selected-color);
+  border-radius: 6px;
+}
+
+[role="dialog"] ._interactive_10sh1_1 {
+  border-color: var(--yao-shell-line);
+  font-family: var(--font-sans);
+}
+
+button[data-size]:not([data-uniform]) {
+  --button-radius: 6px;
+  border-radius: 6px;
+  corner-shape: round;
+}
+
+button:is([data-variant="solid"], [data-variant="primary"])[data-color="primary"] {
+  --button-background-color: var(--yao-brand-color);
+  --button-background-color-hover: var(--yao-brand-hover);
+  --button-background-color-active: var(--yao-brand-active);
+  --button-text-color: #fff;
+  --button-ring-color: var(--yao-shell-focus);
+}
+
+[role="dialog"], [data-radix-popper-content-wrapper] [role="menu"] {
+  border-color: var(--yao-border);
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  corner-shape: round;
+}
+
+[data-composer-surface-variant]:not([data-composer-surface-variant="inline"]) {
+  --composer-border-radius: 12px;
+  --composer-surface-border-radius: 12px;
+  --composer-corner-shape: round;
+  --composer-layout-surface-background: var(--yao-container);
+  --composer-layout-surface-shadow: inset 0 0 0 1px var(--yao-border), 0 2px 8px rgba(0, 0, 0, .04);
+  border-radius: 12px;
+  corner-shape: round;
+}
+
+[data-composer-surface-variant]:focus-within {
+  --composer-layout-surface-shadow: inset 0 0 0 1px var(--yao-brand-color), 0 0 0 3px var(--yao-shell-focus);
+}
+
+:is(button, a, input, textarea, select):focus-visible {
+  outline-color: var(--yao-brand-color);
+}

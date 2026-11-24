@@ -1,0 +1,159 @@
+{
+  "downloadedAt": "2026-10-21T15:14:55.664Z",
+  "purpose": "姚同学首页腾讯视频代表作品海报背景",
+  "selectionNote": "代表作品精选，不表示播放量、热度或历史排名；来自腾讯官方 WeTV 中文页面的国际发行竖版海报，部分片名为英文。",
+  "entries": [
+    {
+      "id": "three-body",
+      "title": "三体",
+      "category": "剧集",
+      "cid": "h31rop8wfso9jnh",
+      "officialPage": "https://v.wetv.vip/zh-cn/play/h31rop8wfso9jnh",
+      "pageTitle": "三体 第1集 {{isFree}} 中文字幕 | WeTV",
+      "imageUrl": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/h31rop8wfso9jnh1730713463423_wzoEtajM/0",
+      "localFile": "three-body.jpg",
+      "width": 640,
+      "height": 898,
+      "bytes": 114418,
+      "sha256": "fbb264beeee15fac5cf726c8ab6a4f4186510c74a97ae546da65684aeae56e4f"
+    },
+    {
+      "id": "the-untamed",
+      "title": "陈情令",
+      "category": "剧集",
+      "cid": "gnwjazjgmg997xg",
+      "officialPage": "https://v.wetv.vip/zh-cn/play/gnwjazjgmg997xg",
+      "pageTitle": "陈情令 第1集 {{isFree}} 中文字幕 | WeTV",
+      "imageUrl": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/gnwjazjgmg997xg1730713349847_1a7cyptv/0",
+      "localFile": "the-untamed.jpg",
+      "width": 640,
+      "height": 898,
+      "bytes": 102799,
+      "sha256": "58ce44c4a0c1cce2f204f6f6d30610a394b3a11a339dc826e2f402361c092a09"
+    },
+    {
+      "id": "joy-of-life",
+      "title": "庆余年",
+      "category": "剧集",
+      "cid": "e1028wfqyv7e32s",
+      "officialPage": "https://v.wetv.vip/zh-cn/play/e1028wfqyv7e32s",
+      "pageTitle": "庆余年 第1集 {{isFree}} 中文字幕 | WeTV",
+      "imageUrl": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/e1028wfqyv7e32s1730713519674_HHOSqkn-/0",
+      "localFile": "joy-of-life.jpg",
+      "width": 640,
+      "height": 898,
+      "bytes": 174816,
+      "sha256": "65875cf4ddf47e2d8f67cf8c5cc2fe7fd82fab4dc05f2c3b83c36c1bc2648f9c"
+    },
+    {
+      "id": "dream-of-splendor",
+      "title": "梦华录",
+      "category": "剧集",
+      "cid": "o5fcepqss9muv1v",
+      "officialPage": "https://v.wetv.vip/zh-cn/play/o5fcepqss9muv1v",
+      "pageTitle": "梦华录 第1集 {{isFree}} 中文字幕 | WeTV",
+      "imageUrl": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/o5fcepqss9muv1v1730712685959_ZVt9Xijj/0",
+      "localFile": "dream-of-splendor.jpg",
+      "width": 640,
+      "height": 898,
+      "bytes": 76444,
+      "sha256": "254104de7b48b10633c8cbfe8e20afc2d018464d84889c5219ffb7aa3d4f2561"
+    },
+    {
+      "id": "the-long-season",
+      "title": "漫长的季节",
+      "category": "剧集",
+      "cid": "srw3kfh68aa9y3b",
+      "officialPage": "https://v.wetv.vip/zh-cn/play/srw3kfh68aa9y3b",
+      "pageTitle": "漫长的季节 第1集 {{isFree}} 中文字幕 | WeTV",
+      "imageUrl": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/srw3kfh68aa9y3b1730712615199_ygZpx7Lr/0",
+      "localFile": "the-long-season.jpg",
+      "width": 640,
+      "height": 898,
+      "bytes": 156835,
+      "sha256": "d4708b3258d5c22f67ae53ebd5b20b2a1a45e901f152ead0467f46a68558f8ef"
+    },
+    {
+      "id": "soul-land",
+      "title": "斗罗大陆",
+      "category": "动漫",
+      "cid": "wzx7pbebgpxlqqr",
+      "officialPage": "https://v.wetv.vip/zh-cn/play/wzx7pbebgpxlqqr",
+      "pageTitle": "斗罗大陆动漫 第1集 {{isFree}} 中文字幕 | WeTV",
+      "imageUrl": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/wzx7pbebgpxlqqr1730718322546_jdY9_NYi/0",
+      "localFile": "soul-land.jpg",
+      "width": 640,
+      "height": 898,
+      "bytes": 95315,
+      "sha256": "d7a32d7bdb3a7cac3ff4f68a2d22b29c4c4d8586bc6f5eb7d39388cf55da34b3"
+    },
+    {
+      "id": "roast",
+      "title": "吐槽大会 第1季",
+      "category": "综艺",
+      "cid": "k85ho8zywwoi2tq",
+      "officialPage": "https://v.wetv.vip/zh-cn/play/k85ho8zywwoi2tq",
+      "pageTitle": "《吐槽大会 第1季》第1期：李湘自曝从不回谢娜微信，何炅汪涵私下没联系？ 中文字幕 | WeTV",
+      "imageUrl": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/k85ho8zywwoi2tq1730719415882_WydFcEAy/0",
+      "localFile": "roast.jpg",
+      "width": 640,
+      "height": 896,
+      "bytes": 54334,
+      "sha256": "dc3c4de1b6c76e1c34964f6c1f90c6763524a4311c533a57449864b430843747"
+    },
+    {
+      "id": "grandmaster",
+      "title": "魔道祖师",
+      "category": "动漫",
+      "cid": "r8t02fkxr9jyvvn",
+      "officialPage": "https://v.wetv.vip/zh-cn/play/r8t02fkxr9jyvvn",
+      "pageTitle": "魔道祖师 第1集 {{isFree}} 中文字幕 | WeTV",
+      "imageUrl": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/r8t02fkxr9jyvvn1730718428541_Vdpx_yul/0",
+      "localFile": "grandmaster.jpg",
+      "width": 640,
+      "height": 898,
+      "bytes": 85475,
+      "sha256": "e019dd84d771d3b68201109fc7a8835cc123b4b2f27f728724225ae9d2c4ffac"
+    },
+    {
+      "id": "lost-you-forever",
+      "title": "长相思 第一季",
+      "category": "剧集",
+      "cid": "yk9j5qmbfiqfnyn",
+      "officialPage": "https://v.wetv.vip/zh-cn/play/yk9j5qmbfiqfnyn",
+      "pageTitle": "长相思 第一季 第1集 {{isFree}} 中文字幕 | WeTV",
+      "imageUrl": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/yk9j5qmbfiqfnyn1730712701198_g_-_5Idk/0",
+      "localFile": "lost-you-forever.jpg",
+      "width": 640,
+      "height": 898,
+      "bytes": 102096,
+      "sha256": "ad59e0a61506ab17bb12586deaf56833625b8b8ade551aa79bf3ee96efa43b62"
+    },
+    {
+      "id": "the-coming-one-girls",
+      "title": "明日之子 水晶时代",
+      "category": "综艺",
+      "cid": "p984w2pq56ttxfk",
+      "officialPage": "https://v.wetv.vip/zh-cn/play/p984w2pq56ttxfk",
+      "pageTitle": "《明日之子 水晶时代》星推官集结篇：六大星推官首次亮相，这一季他们要打造怎样的明日之子 中文字幕 | WeTV",
+      "imageUrl": "https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/p984w2pq56ttxfk1730718852382_MlmkrCur/0",
+      "localFile": "the-coming-one-girls.jpg",
+      "width": 640,
+      "height": 895,
+      "bytes": 37933,
+      "sha256": "d92c23cb624ff106372012c0740243bc9c39fff81d3aa77fa01d92c9a605425a"
+    }
+  ],
+  "unavailable": [],
+  "visualVerification": {
+    "contactSheet": "/tmp/yao-home-posters-contact.png",
+    "verified": true,
+    "notes": "保留10张；创造101官方页面疑似错封面已排除；部分为国际版英文片名。"
+  },
+  "excluded": [
+    {
+      "title": "创造101",
+      "reason": "官方 WeTV 页面封面为男团版本，未使用，避免与中国2018女孩版本混淆"
+    }
+  ]
+}

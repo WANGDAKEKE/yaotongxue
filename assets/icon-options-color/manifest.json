@@ -1,0 +1,82 @@
+{
+  "scope": "Color concepts for macOS launch icon only; installed artwork unchanged",
+  "references": [
+    {
+      "name": "TDesign official light palette",
+      "url": "https://github.com/Tencent/tdesign-common/blob/develop/style/web/theme/_light.less"
+    },
+    {
+      "name": "Tencent Video original logo",
+      "url": "https://vfiles.gtimg.cn/tvideo2/channel-vue/assets/logo-Ckf4UreJ.svg",
+      "source": "Existing project vector, originally extracted from the official SVG"
+    }
+  ],
+  "options": [
+    {
+      "id": "A",
+      "name": "原彩白底",
+      "caption": "保留原标三色，品牌最直接",
+      "palette": [
+        "#FFFFFF",
+        "#0098FF",
+        "#FF8800",
+        "#43E700"
+      ]
+    },
+    {
+      "id": "B",
+      "name": "腾讯蓝白",
+      "caption": "大面积品牌蓝，简洁醒目",
+      "palette": [
+        "#0052D9",
+        "#FFFFFF",
+        "#B5C7FF",
+        "#618DFF"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "彩色叠帧",
+      "caption": "素材画面叠放，更像生产工具",
+      "palette": [
+        "#F2F3FF",
+        "#0052D9",
+        "#FF8800",
+        "#43E700"
+      ]
+    },
+    {
+      "id": "D",
+      "name": "青绿取景",
+      "caption": "蓝绿搭配，强调视频理解",
+      "palette": [
+        "#E3F9E9",
+        "#0052D9",
+        "#2BA471",
+        "#92DAB2"
+      ]
+    },
+    {
+      "id": "E",
+      "name": "深蓝剪辑",
+      "caption": "深蓝底配原彩，突出剪辑感",
+      "palette": [
+        "#001A57",
+        "#0098FF",
+        "#FF8800",
+        "#43E700"
+      ]
+    },
+    {
+      "id": "F",
+      "name": "彩色纯标",
+      "caption": "不加底板，原标轮廓更自由",
+      "palette": [
+        "#0098FF",
+        "#FF8800",
+        "#43E700",
+        "#FFFFFF"
+      ]
+    }
+  ]
+}

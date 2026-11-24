@@ -1,0 +1,108 @@
+/* A decorative half-screen poster wall. Original home controls stay above it. */
+[data-yao-home] {
+  position: relative;
+  isolation: isolate;
+}
+
+.yao-home-posters {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: 50%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  opacity: .48;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .1) 22%, rgba(0, 0, 0, .66) 62%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .1) 22%, rgba(0, 0, 0, .66) 62%, #000 100%);
+}
+
+.yao-home-poster-grid {
+  position: absolute;
+  inset-block-start: -110px;
+  inset-inline-end: -42px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: clamp(450px, calc(100% + 120px), 720px);
+  transform: rotate(-9deg);
+  transform-origin: 70% 0;
+}
+
+.yao-home-poster-column {
+  min-width: 0;
+}
+
+.yao-home-poster-column:nth-child(2) { transform: translateY(-42px); }
+.yao-home-poster-column:nth-child(3) { transform: translateY(-12px); }
+
+.yao-home-poster-track {
+  display: flex;
+  flex-direction: column;
+  animation: yao-home-posters-rise 240s linear infinite;
+  will-change: transform;
+}
+
+.yao-home-poster-column:nth-child(2) .yao-home-poster-track {
+  animation-duration: 288s;
+  animation-delay: -96s;
+}
+
+.yao-home-poster-column:nth-child(3) .yao-home-poster-track {
+  animation-duration: 330s;
+  animation-delay: -174s;
+}
+
+.yao-home-poster-group {
+  display: grid;
+  flex: 0 0 auto;
+  gap: 14px;
+  padding-bottom: 14px;
+}
+
+/* Each track contains three byte-identical groups. Moving exactly one group
+   makes the final image arrangement identical to the first, including gaps. */
+@keyframes yao-home-posters-rise {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, calc(-100% / 3), 0); }
+}
+
+.yao-home-poster {
+  margin: 0;
+  aspect-ratio: 5 / 7;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .45);
+  border-radius: 9px;
+  background: var(--yao-home-container, #fff);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .09);
+}
+
+.yao-home-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.96);
+}
+
+:root:is([data-theme="dark"], [theme-mode="dark"], .dark) .yao-home-posters { opacity: .36; }
+:root:is([data-theme="dark"], [theme-mode="dark"], .dark) .yao-home-poster { border-color: rgba(255, 255, 255, .12); }
+
+@media (max-width: 760px) {
+  .yao-home-poster-grid { gap: 10px; }
+  .yao-home-poster-group { gap: 10px; padding-bottom: 10px; }
+  .yao-home-poster { border-radius: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yao-home-poster-track {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+@media (forced-colors: active) {
+  .yao-home-posters { display: none; }
+}

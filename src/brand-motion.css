@@ -1,0 +1,78 @@
+/* A single brand reveal on the existing logo leaf. The original motion wrapper
+   still owns placement, onboarding progression and its completion callback. */
+[data-yao-startup="intro"] > img,
+[data-yao-startup="intro"] > svg,
+[data-yao-startup="intro"] > [data-yao-brand-mark] {
+  opacity: 1;
+  transform-origin: 50% 50%;
+  animation: yao-brand-reveal 820ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Keep the short pre-React loader quiet so the main reveal is not repeated. */
+.startup-loader__logo {
+  opacity: 1;
+  animation: yao-brand-loader-fade 180ms ease-out both;
+}
+
+/* One soft highlight, rather than a perpetual loading loop. */
+.startup-loader__overlay {
+  animation: yao-brand-glint 620ms cubic-bezier(0.22, 1, 0.36, 1) 160ms both;
+}
+
+@keyframes yao-brand-reveal {
+  0% {
+    opacity: 0;
+    transform: rotate(-16deg) scale(0.76);
+    filter: blur(9px);
+  }
+  42% {
+    opacity: 1;
+    filter: blur(0.4px);
+  }
+  70% {
+    opacity: 1;
+    transform: rotate(1.4deg) scale(1.045);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes yao-brand-glint {
+  0% {
+    opacity: 0;
+    background-position: 140% 0;
+  }
+  28% {
+    opacity: 0.46;
+  }
+  100% {
+    opacity: 0;
+    background-position: -105% 0;
+  }
+}
+
+@keyframes yao-brand-loader-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .startup-loader__logo,
+  [data-yao-startup="intro"] > img,
+  [data-yao-startup="intro"] > svg,
+  [data-yao-startup="intro"] > [data-yao-brand-mark] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    animation: none;
+  }
+
+  .startup-loader__overlay {
+    opacity: 0;
+    animation: none;
+  }
+}

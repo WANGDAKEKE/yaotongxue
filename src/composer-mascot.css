@@ -1,0 +1,33 @@
+/* A static, non-interactive mascot. Keep the editor's own scroll surface intact. */
+[data-yao-composer-mascot-scope] {
+  display: contents;
+  anchor-scope: --yao-composer-edge;
+}
+
+[data-yao-composer-mascot] {
+  display: none;
+}
+
+@supports (anchor-name: --yao-composer-edge) and (anchor-scope: --yao-composer-edge) {
+  [data-yao-composer-mascot-scope] > [data-composer-utility-bar-variant]:not([data-composer-utility-bar-variant="home"]),
+  [data-yao-composer-mascot-scope] > [data-composer-utility-bar-variant="home"] [data-composer-body] {
+    anchor-name: --yao-composer-edge;
+  }
+
+  [data-yao-composer-mascot] {
+    display: block;
+    position: fixed;
+    position-anchor: --yao-composer-edge;
+    left: anchor(left);
+    top: anchor(top);
+    width: 112px;
+    height: 112px;
+    /* The PNG's invisible ledge is y=945 in its 1254px canvas. */
+    transform: translateY(-75.358852%);
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    z-index: 11;
+  }
+}

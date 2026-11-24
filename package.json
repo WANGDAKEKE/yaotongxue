@@ -1,0 +1,21 @@
+{
+  "name": "yaotongxue-local-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal content and visual adaptation scripts for a locally supplied desktop baseline.",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "check": "node scripts/check-source.mjs",
+    "audit:source": "node scripts/audit-source.mjs",
+    "test": "node scripts/verify-recommendation-engine.mjs",
+    "test:baseline": "node scripts/verify-onboarding-navigation.mjs && node scripts/verify-native-demo-tasks.mjs --source && node scripts/verify-recommendation-runtime.mjs",
+    "hydrate:posters": "node scripts/download-home-posters.mjs",
+    "build:overlay": "node scripts/build-ui.mjs",
+    "package:mac": "node scripts/package-app.mjs --overlay build/ui-overlay --icon assets/launcher-icon.icns"
+  },
+  "devDependencies": {
+    "@electron/asar": "4.3.1",
+    "sharp": "0.34.3"
+  }
+}

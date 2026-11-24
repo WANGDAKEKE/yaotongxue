@@ -1,0 +1,18 @@
+/* Keep the existing client layout and components; adapt only accent tokens. */
+:root {
+  --codex-base-accent: #0052d9;
+  --app-color-accent-blue: #0052d9;
+  --app-color-background-accent: #0052d9;
+  --app-color-background-accent-hover: #366ef4;
+  --app-color-background-accent-active: #003cab;
+  --app-color-text-on-accent: #fff;
+  --app-color-text-accent: #0052d9;
+  --app-color-icon-accent: #0052d9;
+  --color-background-accent-action: #0052d9;
+  --color-text-accent-action: #0052d9;
+}
+:root[data-theme="dark"] {
+  --app-color-text-accent: #8bb9ff;
+  --app-color-icon-accent: #8bb9ff;
+  --color-text-accent-action: #8bb9ff;
+}

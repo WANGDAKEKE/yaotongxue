@@ -1,0 +1,74 @@
+[
+  {
+    "roleId": "engineering",
+    "messageKey": "engineering",
+    "displayName": "研发工程师",
+    "summary": "开发视频工具，打通素材处理和剪辑流程。"
+  },
+  {
+    "roleId": "product_management",
+    "messageKey": "product",
+    "displayName": "产品经理",
+    "summary": "梳理素材生产需求，设计好用的剪辑体验。"
+  },
+  {
+    "roleId": "finance",
+    "messageKey": "finance",
+    "displayName": "数据分析",
+    "summary": "分析素材表现，找到更有效的内容做法。"
+  },
+  {
+    "roleId": "marketing",
+    "messageKey": "marketing",
+    "displayName": "内容策划",
+    "summary": "提炼内容看点，制定素材制作方案。"
+  },
+  {
+    "roleId": "sales",
+    "messageKey": "sales",
+    "displayName": "商务合作",
+    "summary": "对接渠道合作，协调素材需求和交付。"
+  },
+  {
+    "roleId": "operations",
+    "messageKey": "operations",
+    "displayName": "内容运营",
+    "summary": "管理剧目和素材，安排内容生产。"
+  },
+  {
+    "roleId": "people_hr",
+    "messageKey": "peopleHr",
+    "displayName": "项目管理",
+    "summary": "安排制作排期，跟进版本和交付。"
+  },
+  {
+    "roleId": "legal",
+    "messageKey": "legal",
+    "displayName": "内容审核",
+    "summary": "检查人物剧情、内容表达和素材授权。"
+  },
+  {
+    "roleId": "data_science",
+    "messageKey": "dataScience",
+    "displayName": "算法工程师",
+    "summary": "研发视频理解、多模态关联和自动剪辑算法。"
+  },
+  {
+    "roleId": "design",
+    "messageKey": "design",
+    "displayName": "视觉设计",
+    "summary": "设计封面、字幕和字卡，统一物料视觉。"
+  },
+  {
+    "roleId": "student",
+    "messageKey": "student",
+    "displayName": "视频剪辑",
+    "summary": "整理镜头，处理节奏、声音和多版剪辑。"
+  },
+  {
+    "roleId": "something_else",
+    "messageKey": "somethingElse",
+    "displayName": "其他岗位",
+    "summary": "按你的实际岗位，一起完成素材生产。"
+  }
+]

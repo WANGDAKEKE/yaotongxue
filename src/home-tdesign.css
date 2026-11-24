@@ -1,0 +1,295 @@
+/*
+ * Home-only TDesign skin; the official layout, controllers and hit areas stay intact.
+ * Primary token sources (Tencent/tdesign-common, develop):
+ * style/web/theme/{_light,_dark,_font,_radius}.less
+ * https://github.com/Tencent/tdesign-common/tree/develop/style/web/theme
+ */
+:root {
+  --yao-home-font: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --yao-home-brand: #0052d9;
+  --yao-home-brand-hover: #366ef4;
+  --yao-home-brand-active: #003cab;
+  --yao-home-brand-light: #f2f3ff;
+  --yao-home-focus: #d9e1ff;
+  --yao-home-text: rgba(0, 0, 0, .9);
+  --yao-home-secondary: rgba(0, 0, 0, .6);
+  --yao-home-placeholder: rgba(0, 0, 0, .4);
+  --yao-home-disabled: rgba(0, 0, 0, .26);
+  --yao-home-page: #f3f3f3;
+  --yao-home-container: #fff;
+  --yao-home-container-hover: #f3f3f3;
+  --yao-home-container-active: #e8e8e8;
+  --yao-home-line: #e8e8e8;
+  --yao-home-border: #ddd;
+  --yao-home-composer-shadow: 0 1px 10px rgba(0, 0, 0, .025), 0 4px 12px rgba(0, 0, 0, .035);
+  --yao-home-card-shadow: 0 1px 2px rgba(0, 0, 0, .035);
+  --yao-home-radius-control: 6px;
+  --yao-home-radius-card: 9px;
+  --yao-home-radius-panel: 12px;
+}
+
+:root:is([data-theme="dark"], [theme-mode="dark"], .dark) {
+  --yao-home-brand: #4582e6;
+  --yao-home-brand-hover: #2667d4;
+  --yao-home-brand-active: #699ef5;
+  --yao-home-brand-light: #1b2f51;
+  --yao-home-focus: #173463;
+  --yao-home-text: rgba(255, 255, 255, .9);
+  --yao-home-secondary: rgba(255, 255, 255, .55);
+  --yao-home-placeholder: rgba(255, 255, 255, .35);
+  --yao-home-disabled: rgba(255, 255, 255, .22);
+  --yao-home-page: #181818;
+  --yao-home-container: #242424;
+  --yao-home-container-hover: #2c2c2c;
+  --yao-home-container-active: #393939;
+  --yao-home-line: #393939;
+  --yao-home-border: #5e5e5e;
+  --yao-home-composer-shadow: 0 4px 12px rgba(0, 0, 0, .16), 0 1px 8px rgba(0, 0, 0, .1);
+  --yao-home-card-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+}
+
+/* Rebind real app semantic tokens within the real home surface. */
+[data-yao-home] {
+  --font-sans: var(--yao-home-font);
+  --font-ui-family: var(--yao-home-font);
+  --color-text: var(--yao-home-text);
+  --color-text-secondary: var(--yao-home-secondary);
+  --color-text-tertiary: var(--yao-home-placeholder);
+  --color-text-disabled: var(--yao-home-disabled);
+  --color-text-accent: var(--yao-home-brand);
+  --color-text-accent-action: var(--yao-home-brand);
+  --color-text-info: var(--yao-home-brand);
+  --color-surface: var(--yao-home-container);
+  --color-surface-elevated-secondary: var(--yao-home-container);
+  --color-surface-secondary: var(--yao-home-page);
+  --color-border: var(--yao-home-border);
+  --color-border-subtle: var(--yao-home-line);
+  --color-background-primary-solid: var(--yao-home-brand);
+  --color-background-primary-solid-hover: var(--yao-home-brand-hover);
+  --color-background-primary-solid-active: var(--yao-home-brand-active);
+  --color-text-primary-solid: #fff;
+  --color-text-primary-solid-hover: #fff;
+  --color-background-primary-ghost-hover: var(--yao-home-brand-light);
+  --color-background-secondary-ghost-hover: var(--yao-home-container-hover);
+  --color-text-primary-ghost: var(--yao-home-text);
+  --color-text-primary-ghost-hover: var(--yao-home-brand);
+  --color-ring-primary-solid: var(--yao-home-focus);
+  --color-ring-primary-ghost: var(--yao-home-focus);
+  font-family: var(--yao-home-font);
+  color: var(--yao-home-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-yao-home] :is(button, input, textarea, [contenteditable="true"]) {
+  font-family: var(--yao-home-font);
+}
+[data-yao-home] .font-openai-sans { font-family: var(--yao-home-font); }
+
+[data-yao-home] :is(.text-default, .text-codex-default) { color: var(--yao-home-text); }
+[data-yao-home] :is(.text-secondary, .text-codex-description) { color: var(--yao-home-secondary); }
+[data-yao-home] :is(.text-tertiary, .text-codex-tertiary) { color: var(--yao-home-placeholder); }
+[data-yao-home] :is(input, textarea)::placeholder { color: var(--yao-home-placeholder); opacity: 1; }
+[data-yao-home] :is(button, a, input, textarea, [contenteditable="true"]):focus-visible {
+  outline: 2px solid var(--yao-home-brand);
+  outline-offset: 3px;
+}
+[data-yao-home] ::selection { background: var(--yao-home-focus); }
+
+/* Native button variants keep their existing sizes, roles and event handlers. */
+[data-yao-home] button[data-size]:not([data-uniform]) {
+  --button-radius: var(--yao-home-radius-control);
+  border-radius: var(--yao-home-radius-control);
+  font-weight: 500;
+  corner-shape: round;
+}
+[data-yao-home] button:is([data-variant="solid"], [data-variant="primary"])[data-color="primary"] {
+  --button-background-color: var(--yao-home-brand);
+  --button-background-color-hover: var(--yao-home-brand-hover);
+  --button-background-color-active: var(--yao-home-brand-active);
+  --button-text-color: #fff;
+  --button-ring-color: var(--yao-home-focus);
+}
+[data-yao-home] button[data-variant="ghost"] {
+  --button-background-color: var(--yao-home-container-hover);
+  --button-background-color-hover: var(--yao-home-container-hover);
+  --button-background-color-active: var(--yao-home-container-active);
+  --button-text-color-hover: var(--yao-home-brand);
+}
+[data-yao-home] button:disabled { cursor: default; }
+
+/* These are the original ComposerLayout data attributes and body class. */
+[data-yao-home] [data-composer-surface-variant]:not([data-composer-surface-variant="inline"]) {
+  --composer-border-radius: var(--yao-home-radius-panel);
+  --composer-surface-border-radius: var(--yao-home-radius-panel);
+  --composer-layout-surface-background: var(--yao-home-container);
+  --composer-layout-surface-shadow: inset 0 0 0 1px var(--yao-home-border), var(--yao-home-composer-shadow);
+  --composer-corner-shape: round;
+  --color-background-composer-surface: var(--yao-home-container);
+  border-radius: var(--yao-home-radius-panel);
+  corner-shape: round;
+}
+[data-yao-home] [data-composer-utility-bar-variant="home"] ._ComposerLayoutBody_5est5_2 {
+  border-radius: var(--yao-home-radius-panel);
+  corner-shape: round;
+}
+[data-yao-home] [data-composer-surface-variant]:focus-within {
+  --composer-layout-surface-shadow: inset 0 0 0 1px var(--yao-home-brand), 0 0 0 3px var(--yao-home-focus), var(--yao-home-composer-shadow);
+}
+[data-yao-home] :is([data-codex-composer-root], [data-yao-home-composer]) .ProseMirror {
+  color: var(--yao-home-text);
+  font-family: var(--yao-home-font);
+  caret-color: var(--yao-home-brand);
+}
+[data-yao-home] [data-composer-navigation-target] {
+  border-radius: var(--yao-home-radius-control);
+  font-weight: 400;
+}
+[data-yao-home] [data-composer-dropdown-foreground="primary"] { color: var(--yao-home-text); }
+[data-yao-home] [data-composer-dropdown-foreground="secondary"] { color: var(--yao-home-secondary); }
+
+/* Original ambient cards and starter suggestions: flatter borders and 9px radius. */
+[data-yao-home] :is([data-home-ambient-suggestions], [data-yao-home-suggestions]) :is(section.border, article.border, button.border, a.border) {
+  border-color: var(--yao-home-line);
+  border-radius: var(--yao-home-radius-card);
+  background-color: var(--yao-home-container);
+  box-shadow: var(--yao-home-card-shadow);
+  corner-shape: round;
+}
+[data-yao-home] :is([data-home-ambient-suggestions], [data-yao-home-suggestions]) :is(button.border, a.border):hover {
+  border-color: var(--yao-home-brand-hover);
+  background-color: var(--yao-home-brand-light);
+  color: var(--yao-home-brand);
+}
+[data-yao-home] :is([data-home-ambient-suggestions], [data-yao-home-suggestions]) :is(h2, h3) {
+  color: var(--yao-home-text);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+/* A quiet loading-screen style tip in the original hero slot. */
+[data-yao-home] .yao-home-tips {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--yao-home-text);
+  font-family: var(--yao-home-font);
+  white-space: normal;
+}
+[data-yao-home] .yao-home-tip-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border: 1px solid color-mix(in srgb, var(--yao-home-brand) 15%, transparent);
+  border-radius: var(--yao-home-radius-control);
+  background-color: var(--yao-home-brand-light);
+  color: var(--yao-home-brand);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+[data-yao-home] .yao-home-tip-label::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url("./tencent-video-mark.svg") center / contain no-repeat;
+}
+[data-yao-home] .yao-home-tip-viewport {
+  display: block;
+  max-width: 100%;
+  min-height: 72px;
+  overflow: hidden;
+}
+[data-yao-home] .yao-home-tip-copy {
+  display: block;
+  max-width: 27em;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: .005em;
+  text-wrap: balance;
+  transition: opacity 220ms cubic-bezier(.22, 1, .36, 1), transform 220ms cubic-bezier(.22, 1, .36, 1), filter 220ms cubic-bezier(.22, 1, .36, 1);
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+[data-yao-home] .yao-home-tip-copy[data-phase="out"] {
+  opacity: 0;
+  transform: translateY(-6px);
+  filter: blur(2px);
+}
+[data-yao-home] .yao-home-tip-context {
+  max-width: 100%;
+  color: var(--yao-home-brand);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+[data-yao-home] .yao-home-tip-context button {
+  color: var(--yao-home-brand);
+  text-decoration-color: color-mix(in srgb, var(--yao-home-brand) 35%, transparent);
+}
+
+/* The sidebar keeps its original rows and hit areas; only its theme changes on home. */
+:root:has([data-yao-home]) [data-slate-sidebar-content] {
+  --color-text: var(--yao-home-text);
+  --color-text-info: var(--yao-home-brand);
+  --color-text-secondary: var(--yao-home-secondary);
+  --color-text-tertiary: var(--yao-home-placeholder);
+  --color-text-primary-ghost: var(--yao-home-text);
+  --color-text-primary-ghost-hover: var(--yao-home-brand);
+  --color-background-primary-ghost-hover: var(--yao-home-brand-light);
+  --color-background-primary-ghost-active: var(--yao-home-brand-light);
+  --color-background-secondary-ghost-hover: var(--yao-home-container-active);
+  --color-background-secondary-ghost-active: var(--yao-home-container-active);
+  --color-border: var(--yao-home-line);
+  background-color: var(--yao-home-page);
+  color: var(--yao-home-text);
+  font-family: var(--yao-home-font);
+  font-size: 13px;
+  line-height: 20px;
+}
+:root:has([data-yao-home]) [data-slate-sidebar-content] :is(button, a) {
+  --button-radius: var(--yao-home-radius-control);
+  font-family: var(--yao-home-font);
+}
+:root:has([data-yao-home]) [data-slate-sidebar-content] :is(.font-openai-sans, ._Navigation_1uxfp_2) {
+  font-family: var(--yao-home-font);
+}
+:root:has([data-yao-home]) [data-slate-sidebar-content] ._Navigation_1uxfp_2 {
+  --color-text: var(--yao-home-text);
+  --color-text-primary-ghost: var(--yao-home-text);
+  --color-text-primary-ghost-hover: var(--yao-home-brand);
+  --color-text-secondary-ghost-hover: var(--yao-home-brand);
+}
+:root:has([data-yao-home]) [data-slate-sidebar-content] :is(a[aria-current="page"], button[aria-current="page"], [role="treeitem"][aria-selected="true"], [data-app-action-sidebar-thread-selected="true"]) {
+  color: var(--yao-home-brand);
+  background-color: var(--yao-home-brand-light);
+  border-radius: var(--yao-home-radius-control);
+  font-weight: 500;
+}
+:root:has([data-yao-home]) [data-slate-sidebar-content] :is(button, a):focus-visible {
+  outline: 2px solid var(--yao-home-brand);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  [data-yao-home] .yao-home-tip-copy { font-size: 24px; line-height: 32px; }
+  [data-yao-home] .yao-home-tip-viewport { min-height: 64px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-yao-home] .yao-home-tip-copy { transition: none; transform: none; filter: none; }
+}
+@media (forced-colors: active) {
+  [data-yao-home] [data-composer-surface-variant]:not([data-composer-surface-variant="inline"]) {
+    --composer-layout-surface-shadow: none;
+    outline: 1px solid CanvasText;
+  }
+  [data-yao-home] .yao-home-tip-label { border-color: CanvasText; }
+}
